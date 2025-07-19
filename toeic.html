@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Bài tập TOEIC</title>
-    <!-- Có thể dùng lại style từ index.html -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,17 +10,25 @@
         <h1>Bài tập TOEIC Listening</h1>
         <form id="quiz-form">
             <div class="question">
+                <p>Câu 1: Nghe và chọn đáp án đúng</p>
                 <audio controls>
-                    <source src="audio-sample.mp3" type="audio/mpeg">
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
                     Trình duyệt không hỗ trợ audio
                 </audio>
-                <p>Câu 1: What is the man doing?</p>
                 <label><input type="radio" name="q1" value="A"> A. Ordering food</label><br>
                 <label><input type="radio" name="q1" value="B"> B. Asking for directions</label><br>
                 <label><input type="radio" name="q1" value="C"> C. Making a complaint</label><br>
             </div>
             
-            <button type="submit" class="btn">Nộp bài</button>
+            <div class="question">
+                <p>Câu 2: Chọn từ đúng để điền vào chỗ trống</p>
+                <p>The meeting was postponed _____ the bad weather.</p>
+                <label><input type="radio" name="q2" value="A"> A. because</label><br>
+                <label><input type="radio" name="q2" value="B"> B. because of</label><br>
+                <label><input type="radio" name="q2" value="C"> C. due</label><br>
+            </div>
+            
+            <button type="submit" class="btn btn-submit">Nộp bài</button>
         </form>
     </div>
     
