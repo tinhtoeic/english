@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập IELTS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bài tập IELTS Writing</h1>
+        <form id="writing-form">
+            <div class="question">
+                <p>Đề bài: The chart below shows the percentage of people using different modes of transportation in a city from 1990 to 2010. Summarize the information by selecting and reporting the main features.</p>
+                <img src="https://via.placeholder.com/600x300?text=Biểu+đồ+mẫu" alt="Biểu đồ" style="width:100%; max-width:600px;">
+            </div>
+            
+            <div class="question">
+                <label for="essay">Bài viết của bạn:</label><br>
+                <textarea id="essay" name="essay" rows="10" style="width:100%; padding:10px;"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-submit">Nộp bài</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('writing-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Bài viết đã được gửi! Giáo viên sẽ chấm và phản hồi sớm.');
+        });
+    </script>
+</body>
+</html>
