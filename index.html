@@ -3,23 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ứng dụng học TOEIC/IELTS</title>
+    <title>Hệ thống học TOEIC/IELTS miễn phí</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Chào mừng đến với ứng dụng học TOEIC/IELTS</h1>
-        <p>Đây là phiên bản demo miễn phí giúp bạn học và luyện thi hiệu quả.</p>
-        
-        <h2>Lựa chọn của bạn</h2>
-        <a href="toeic.html" class="btn">Học TOEIC</a>
-        <a href="ielts.html" class="btn">Học IELTS</a>
-        
-        <h2>Bài tập mới nhất</h2>
-        <ul>
-            <li><a href="toeic-listening-1.html">TOEIC Listening Part 1</a></li>
-            <li><a href="ielts-writing-task1.html">IELTS Writing Task 1</a></li>
-        </ul>
-    </div>
+    <header>
+        <div class="container">
+            <h1 class="logo"><i class="fas fa-language"></i> English Master</h1>
+            <nav>
+                <a href="#home">Trang chủ</a>
+                <a href="#toeic">TOEIC</a>
+                <a href="#ielts">IELTS</a>
+                <a href="#progress">Tiến trình</a>
+                <a href="login.html" class="btn-login">Đăng nhập</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="home">
+            <div class="hero">
+                <h2>Nâng trình tiếng Anh cùng chúng tôi!</h2>
+                <p>Hệ thống học TOEIC/IELTS miễn phí với giáo trình chất lượng</p>
+                <div class="cta-buttons">
+                    <a href="toeic/listening.html" class="btn-primary">Bắt đầu học TOEIC</a>
+                    <a href="ielts/writing.html" class="btn-secondary">Bắt đầu học IELTS</a>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Luyện nghe chuyên sâu</h3>
+                    <p>100+ bài luyện nghe theo trình độ</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Ngữ pháp trọng điểm</h3>
+                    <p>Hệ thống ngữ pháp TOEIC/IELTS đầy đủ</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Theo dõi tiến độ</h3>
+                    <p>Đánh giá năng lực qua từng tuần</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 English Master. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
