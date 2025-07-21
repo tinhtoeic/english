@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Writing - Diệu Thanh English</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../ielts/ielts-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="../../images/dolphin-logo.png" alt="Diệu Thanh English Logo" class="logo-img">
+                <h1 class="logo-text">Diệu Thanh <span>English</span></h1>
+            </div>
+            <nav>
+                <a href="../../index.html"><i class="fas fa-home"></i> Trang chủ</a>
+                <a href="../writing.html" class="active"><i class="fas fa-pen-fancy"></i> Writing</a>
+                <a href="../speaking.html"><i class="fas fa-comments"></i> Speaking</a>
+                <a href="../../progress.html"><i class="fas fa-chart-line"></i> Tiến trình</a>
+                <a href="../../login.html" class="btn-login"><i class="fas fa-user"></i> Tài khoản</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container ielts-container">
+        <section class="ielts-header">
+            <h2><i class="fas fa-pen-fancy"></i> IELTS Writing</h2>
+            <div class="task-selector">
+                <button class="task-btn active" data-task="task1">Task 1</button>
+                <button class="task-btn" data-task="task2">Task 2</button>
+            </div>
+        </section>
+
+        <section class="writing-task" id="task1">
+            <div class="task-instructions">
+                <h3>Writing Task 1</h3>
+                <p>Bạn nên dành khoảng 20 phút cho task này. Viết ít nhất 150 từ.</p>
+                <div class="task-question">
+                    <p><strong>Đề bài:</strong> The chart below shows the number of tourists visiting a particular Caribbean island between 2010 and 2017. Summarize the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+                    <img src="https://via.placeholder.com/800x400?text=IELTS+Writing+Task+1+Example" alt="IELTS Writing Task 1 Example">
+                </div>
+            </div>
+
+            <div class="writing-area">
+                <div class="toolbar">
+                    <button class="tool-btn" title="Bold"><i class="fas fa-bold"></i></button>
+                    <button class="tool-btn" title="Italic"><i class="fas fa-italic"></i></button>
+                    <button class="tool-btn" title="Word Count"><i class="fas fa-calculator"></i></button>
+                    <span class="word-count">0 words</span>
+                </div>
+                <textarea id="writing-text" placeholder="Viết bài của bạn ở đây..."></textarea>
+            </div>
+
+            <div class="writing-controls">
+                <button class="btn btn-blue" id="submit-writing"><i class="fas fa-paper-plane"></i> Nộp bài</button>
+                <button class="btn btn-pink" id="save-draft"><i class="fas fa-save"></i> Lưu nháp</button>
+                <button class="btn btn-transparent" id="show-sample"><i class="fas fa-eye"></i> Xem bài mẫu</button>
+            </div>
+
+            <div class="sample-answer hidden" id="sample-answer">
+                <h4><i class="fas fa-star"></i> Bài mẫu tham khảo</h4>
+                <div class="sample-content">
+                    <p>The bar chart illustrates the number of visitors to a Caribbean island over an eight-year period from 2010 to 2017, measured in millions.</p>
+                    <p>Overall, the total number of tourists increased steadily over the period shown. Cruise ship passengers showed the most significant growth, while those staying on the island rose more gradually.</p>
+                    <p>In 2010, the island received around 1 million visitors in total, with the majority (0.7 million) staying on the island and the remainder arriving on cruise ships. By 2017, the total number had risen to 3.5 million, with cruise ship passengers accounting for 2 million of this figure.</p>
+                    <p>The most notable trend was the rapid increase in cruise ship visitors, which surpassed island stayers in 2015. While both categories grew, the gap widened in the final two years, with cruise ship numbers almost doubling those staying on the island by 2017.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="writing-task hidden" id="task2">
+            <!-- Nội dung tương tự cho Task 2 -->
+        </section>
+
+        <section class="writing-tips">
+            <h3><i class="fas fa-lightbulb"></i> Tips for IELTS Writing</h3>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Quản lý thời gian</h4>
+                    <p>Dành 20 phút cho Task 1 và 40 phút cho Task 2. Đảm bảo viết đủ số từ yêu cầu.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h4>Cấu trúc bài viết</h4>
+                    <p>Task 1: Introduction, Overview, Details. Task 2: Introduction, Body paragraphs, Conclusion.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Phân tích biểu đồ</h4>
+                    <p>Chọn các đặc điểm chính, so sánh và báo cáo xu hướng thay vì liệt kê tất cả số liệu.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Giống footer các trang khác -->
+    </footer>
+
+    <script src="../../script.js"></script>
+    <script src="../../ielts/ielts-script.js"></script>
+</body>
+</html>
