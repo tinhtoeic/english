@@ -3,120 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản trị - Diệu Thanh English</title>
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="../admin/admin-styles.css">
+    <title>Dashboard - Diệu Thanh English</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body onload="checkLogin()">
-    <header>
+<body onload="checkAdminLogin()">
+    <header class="main-header">
         <div class="container">
-            <div class="logo-container">
-                <img src="../../images/dolphin-logo.png" alt="Diệu Thanh English Logo" class="logo-img">
-                <h1 class="logo-text">Diệu Thanh <span>English</span></h1>
+            <div class="logo">
+                <img src="../images/dolphin-logo.png" alt="Diệu Thanh English">
+                <span>Diệu Thanh English</span>
             </div>
-            <nav>
-                <a href="../../index.html"><i class="fas fa-home"></i> Trang chủ</a>
-                <a href="../dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                <a href="../students.html"><i class="fas fa-users"></i> Học viên</a>
-                <a href="../exercises.html"><i class="fas fa-tasks"></i> Bài tập</a>
-                <a href="#" onclick="logout()" class="btn-login"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            <nav class="main-nav">
+                <a href="../index.html"><i class="fas fa-home"></i> Trang chủ</a>
+                <a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="students.html"><i class="fas fa-users"></i> Học viên</a>
+                <a href="exercises.html"><i class="fas fa-tasks"></i> Bài tập</a>
+                <a href="#" onclick="adminLogout()" class="btn-login"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
             </nav>
         </div>
     </header>
 
-    <main class="container admin-container">
-        <section class="admin-header">
-            <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
-            <div class="admin-welcome">
-                Xin chào, <strong id="admin-name">Admin</strong>!
-            </div>
-        </section>
+    <main class="admin-main">
+        <div class="container">
+            <section class="admin-header">
+                <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+                <div class="admin-welcome">
+                    Xin chào, <strong id="admin-name">Quản trị viên</strong>!
+                </div>
+            </section>
 
-        <section class="admin-stats">
-            <div class="stat-card">
-                <div class="stat-icon blue-bg">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>Tổng học viên</h3>
-                    <p class="stat-value">128</p>
-                    <p class="stat-change"><i class="fas fa-arrow-up"></i> 12 so với tháng trước</p>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon pink-bg">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>Bài tập đã giao</h3>
-                    <p class="stat-value">56</p>
-                    <p class="stat-change"><i class="fas fa-arrow-up"></i> 8 so với tuần trước</p>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon blue-bg">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <div class="stat-info">
-                    <h3>Bài đã nộp</h3>
-                    <p class="stat-value">324</p>
-                    <p class="stat-change"><i class="fas fa-arrow-down"></i> 15 so với tuần trước</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="admin-charts">
-            <div class="chart-container">
-                <h3><i class="fas fa-chart-line"></i> Tiến độ học tập</h3>
-                <canvas id="progressChart"></canvas>
-            </div>
-            <div class="chart-container">
-                <h3><i class="fas fa-chart-pie"></i> Phân bổ học viên</h3>
-                <canvas id="studentsChart"></canvas>
-            </div>
-        </section>
-
-        <section class="recent-activities">
-            <h3><i class="fas fa-history"></i> Hoạt động gần đây</h3>
-            <div class="activities-list">
-                <div class="activity">
-                    <div class="activity-icon blue-bg">
-                        <i class="fas fa-user-plus"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h4>Học viên mới</h4>
-                        <p class="activity-meta">Nguyễn Văn A đã đăng ký lúc 14:30 - 20/10/2023</p>
-                    </div>
-                </div>
-                <div class="activity">
-                    <div class="activity-icon pink-bg">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h4>Bài tập mới</h4>
-                        <p class="activity-meta">Bạn đã thêm bài TOEIC Listening Part 3 lúc 09:15 - 19/10/2023</p>
-                    </div>
-                </div>
-                <div class="activity">
-                    <div class="activity-icon blue-bg">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h4>Bài tập đã chấm</h4>
-                        <p class="activity-meta">Bạn đã chấm bài IELTS Writing cho Trần Thị B lúc 21:45 - 18/10/2023</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <!-- Các phần thống kê -->
+        </div>
     </main>
 
-    <footer>
-        <!-- Giống footer các trang khác -->
-    </footer>
-
-    <script src="../../script.js"></script>
-    <script src="../admin/admin-script.js"></script>
+    <script src="../script.js"></script>
+    <script src="admin-script.js"></script>
 </body>
 </html>
