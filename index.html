@@ -3,50 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ thống học TOEIC/IELTS miễn phí</title>
+    <title>Diệu Thanh English - Hệ thống học TOEIC/IELTS</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1 class="logo"><i class="fas fa-language"></i> English Master</h1>
+            <div class="logo-container">
+                <img src="images/dolphin-logo.png" alt="Diệu Thanh English Logo" class="logo-img">
+                <h1 class="logo-text">Diệu Thanh <span>English</span></h1>
+            </div>
             <nav>
-                <a href="#home">Trang chủ</a>
-                <a href="#toeic">TOEIC</a>
-                <a href="#ielts">IELTS</a>
-                <a href="#progress">Tiến trình</a>
-                <a href="login.html" class="btn-login">Đăng nhập</a>
+                <a href="#home"><i class="fas fa-home"></i> Trang chủ</a>
+                <a href="#toeic"><i class="fas fa-headphones"></i> TOEIC</a>
+                <a href="#ielts"><i class="fas fa-pen-fancy"></i> IELTS</a>
+                <a href="#progress"><i class="fas fa-chart-line"></i> Tiến trình</a>
+                <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Đăng nhập</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <section id="home">
-            <div class="hero">
-                <h2>Nâng trình tiếng Anh cùng chúng tôi!</h2>
-                <p>Hệ thống học TOEIC/IELTS miễn phí với giáo trình chất lượng</p>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h2>Cùng cá heo Diệu Thanh chinh phục tiếng Anh!</h2>
+                <p>Hệ thống học tập thông minh - Lộ trình cá nhân hóa - Theo dõi tiến độ chi tiết</p>
                 <div class="cta-buttons">
-                    <a href="toeic/listening.html" class="btn-primary">Bắt đầu học TOEIC</a>
-                    <a href="ielts/writing.html" class="btn-secondary">Bắt đầu học IELTS</a>
+                    <a href="toeic/listening.html" class="btn btn-blue"><i class="fas fa-play"></i> Bắt đầu học</a>
+                    <a href="#courses" class="btn btn-pink"><i class="fas fa-book-open"></i> Khóa học</a>
                 </div>
             </div>
+            <div class="hero-image">
+                <img src="https://img.freepik.com/free-vector/hand-drawn-dolphin-collection_23-2147774001.jpg" alt="Học cùng cá heo">
+            </div>
+        </section>
 
-            <div class="features">
+        <section id="features" class="features-section">
+            <h2 class="section-title">Vì sao chọn Diệu Thanh English?</h2>
+            <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-headphones"></i>
-                    <h3>Luyện nghe chuyên sâu</h3>
-                    <p>100+ bài luyện nghe theo trình độ</p>
+                    <div class="feature-icon blue-bg">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Phương pháp "Cá heo"</h3>
+                    <p>Học như chơi - Tiếp thu tự nhiên như cá heo bơi lội</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Ngữ pháp trọng điểm</h3>
-                    <p>Hệ thống ngữ pháp TOEIC/IELTS đầy đủ</p>
+                    <div class="feature-icon pink-bg">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Giáo viên chất lượng</h3>
+                    <p>Đội ngũ giáo viên 8.0 IELTS/900+ TOEIC</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Theo dõi tiến độ</h3>
-                    <p>Đánh giá năng lực qua từng tuần</p>
+                    <div class="feature-icon blue-bg">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Phân tích điểm mạnh/yếu</h3>
+                    <p>Hệ thống báo cáo chi tiết sau mỗi bài học</p>
                 </div>
             </div>
         </section>
@@ -54,7 +70,26 @@
 
     <footer>
         <div class="container">
-            <p>© 2023 English Master. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/dolphin-logo.png" alt="Diệu Thanh English Logo" width="60">
+                    <span>Diệu Thanh English</span>
+                </div>
+                <div class="footer-links">
+                    <h4>Liên hệ</h4>
+                    <p><i class="fas fa-envelope"></i> info@dieuthanhenglish.com</p>
+                    <p><i class="fas fa-phone"></i> 0123 456 789</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Theo dõi chúng tôi</h4>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Diệu Thanh English. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
