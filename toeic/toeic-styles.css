@@ -1,0 +1,268 @@
+/* TOEIC Specific Styles */
+.toeic-container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.toeic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--blue-light);
+}
+
+.toeic-header h2 {
+    color: var(--blue-primary);
+    font-size: 1.8rem;
+}
+
+.toeic-header h2 i {
+    margin-right: 10px;
+}
+
+.level-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.level-selector select {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--blue-light);
+    background-color: var(--white);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.part-selector {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--blue-light);
+}
+
+.part {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-light);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.part:hover {
+    color: var(--blue-primary);
+}
+
+.part.active {
+    color: var(--blue-primary);
+    border-bottom-color: var(--pink-primary);
+}
+
+.exercise-container {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.audio-player audio {
+    flex-grow: 1;
+}
+
+.timer {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.image-question {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-question img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.options {
+    margin: 25px 0;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: var(--gray-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option:hover {
+    background-color: var(--blue-light);
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+.option-letter {
+    font-weight: bold;
+    margin-right: 10px;
+    color: var(--blue-primary);
+}
+
+.exercise-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: 2px solid var(--blue-light);
+    color: var(--blue-primary);
+}
+
+.result-container, .transcript-container {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--gray-light);
+}
+
+.result-container {
+    border-left: 4px solid var(--pink-primary);
+}
+
+.transcript-container {
+    border-left: 4px solid var(--blue-primary);
+}
+
+.result-container h4, .transcript-container h4 {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.result-container h4 i {
+    color: var(--pink-primary);
+}
+
+.transcript-container h4 i {
+    color: var(--blue-primary);
+}
+
+.progress-tracker {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.progress-tracker h3 {
+    margin-bottom: 20px;
+    color: var(--blue-primary);
+}
+
+.progress-tracker h3 i {
+    margin-right: 10px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: var(--gray-light);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--blue-primary), var(--pink-primary));
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progress-bar span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.stat {
+    flex: 1;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--blue-primary);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .toeic-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .part-selector {
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .part {
+        white-space: nowrap;
+    }
+    
+    .audio-player {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .exercise-controls {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
