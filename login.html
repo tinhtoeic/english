@@ -5,39 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập - Diệu Thanh English</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .login-container h2 {
+            color: #1e88e5;
+            text-align: center;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #1e88e5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
-        <div class="login-box">
-            <div class="login-logo">
-                <img src="images/dolphin-logo.png" alt="Diệu Thanh English Logo">
-                <h2>Diệu Thanh English</h2>
-            </div>
-            
-            <form id="loginForm">
-                <div class="input-group">
-                    <label for="username"><i class="fas fa-user"></i> Tên đăng nhập</label>
-                    <input type="text" id="username" required>
-                </div>
-                
-                <div class="input-group">
-                    <label for="password"><i class="fas fa-lock"></i> Mật khẩu</label>
-                    <input type="password" id="password" required>
-                </div>
-                
-                <button type="submit" class="btn btn-blue" onclick="login()">
-                    <i class="fas fa-sign-in-alt"></i> Đăng nhập
-                </button>
-                
-                <div class="login-links">
-                    <a href="#">Quên mật khẩu?</a>
-                    <a href="#">Đăng ký tài khoản</a>
-                </div>
-            </form>
-        </div>
+        <h2>Đăng nhập hệ thống</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Tên đăng nhập" required>
+            <input type="password" id="password" placeholder="Mật khẩu" required>
+            <button type="submit">Đăng nhập</button>
+        </form>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Kiểm tra đơn giản
+            if(username === "admin" && password === "123456") {
+                localStorage.setItem('isLoggedIn', 'true');
+                alert('Đăng nhập thành công!');
+                window.location.href = "index.html";
+            } else {
+                alert('Sai tên đăng nhập hoặc mật khẩu!');
+            }
+        });
+    </script>
 </body>
 </html>
