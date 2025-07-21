@@ -1,57 +1,60 @@
-// Lưu trạng thái đăng nhập
-let isLoggedIn = false;
-
-// Xử lý sự kiện khi trang load xong
+// Khởi tạo ứng dụng
 document.addEventListener('DOMContentLoaded', function() {
-    // Kiểm tra xem có phải trang chủ không
-    if (document.querySelector('#home')) {
-        initHomePage();
-    }
+    // Hiệu ứng loading cho trang
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+
+    // Active menu item
+    const currentPage = window.location.hash || '#home';
+    const menuItems = document.querySelectorAll('nav a');
     
-    // Thêm hiệu ứng cho các thẻ bài tập
-    const exerciseCards = document.querySelectorAll('.exercise-card');
-    exerciseCards.forEach(card => {
-        card.addEventListener('click', function() {
-            window.location.href = this.dataset.link;
-        });
+    menuItems.forEach(item => {
+        if (item.getAttribute('href') === currentPage) {
+            item.classList.add('active');
+        }
+    });
+
+    // Lưu trạng thái đăng nhập
+    const loginBtn = document.querySelector('.btn-login');
+    if (localStorage.getItem('isLoggedIn') {
+        loginBtn.innerHTML = '<i class="fas fa-user"></i> Tài khoản';
+    }
+
+    // Hiệu ứng cho feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+        
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 500);
     });
 });
 
-function initHomePage() {
-    // Hiệu ứng cho hero section
-    const hero = document.querySelector('.hero');
-    hero.style.opacity = '0';
-    hero.style.transform = 'translateY(20px)';
-    hero.style.transition = 'all 0.8s ease';
-    
-    setTimeout(() => {
-        hero.style.opacity = '1';
-        hero.style.transform = 'translateY(0)';
-    }, 300);
-    
-    // Làm nổi bật menu hiện tại
-    const currentPage = window.location.hash || '#home';
-    document.querySelector(`nav a[href="${currentPage}"]`).classList.add('active');
-}
-
-// Hàm đăng nhập đơn giản
+// Hàm đăng nhập
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    // Kiểm tra đơn giản (trong thực tế cần kết nối backend)
+    // Kiểm tra đơn giản
     if (username && password) {
-        isLoggedIn = true;
         localStorage.setItem('isLoggedIn', 'true');
-        window.location.href = 'admin/dashboard.html';
+        localStorage.setItem('username', username);
+        window.location.href = 'index.html';
     } else {
         alert('Vui lòng nhập đầy đủ thông tin!');
     }
 }
 
-// Kiểm tra trạng thái đăng nhập khi vào trang admin
-function checkLogin() {
-    if (localStorage.getItem('isLoggedIn') !== 'true') {
-        window.location.href = '../login.html';
-    }
+// Hàm đăng xuất
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+    window.location.href = 'login.html';
 }
