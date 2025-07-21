@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo dõi tiến trình - Diệu Thanh English</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="progress-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/dolphin-logo.png" alt="Diệu Thanh English Logo" class="logo-img">
+                <h1 class="logo-text">Diệu Thanh <span>English</span></h1>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a>
+                <a href="toeic/listening.html"><i class="fas fa-headphones"></i> TOEIC</a>
+                <a href="ielts/writing.html"><i class="fas fa-pen-fancy"></i> IELTS</a>
+                <a href="progress.html" class="active"><i class="fas fa-chart-line"></i> Tiến trình</a>
+                <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Tài khoản</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container progress-container">
+        <section class="progress-header">
+            <h2><i class="fas fa-chart-line"></i> Tiến trình học tập</h2>
+            <div class="time-filter">
+                <span>Xem theo:</span>
+                <select id="time-range">
+                    <option value="7days">7 ngày qua</option>
+                    <option value="30days">30 ngày qua</option>
+                    <option value="all" selected>Tất cả</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="stats-overview">
+            <div class="stat-card">
+                <div class="stat-icon blue-bg">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Bài đã hoàn thành</h3>
+                    <p class="stat-value">42</p>
+                    <p class="stat-change"><i class="fas fa-arrow-up"></i> 5 bài so với tuần trước</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon pink-bg">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Độ chính xác</h3>
+                    <p class="stat-value">78%</p>
+                    <p class="stat-change"><i class="fas fa-arrow-up"></i> 3% so với tuần trước</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon blue-bg">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Ngày liên tiếp</h3>
+                    <p class="stat-value">12</p>
+                    <p class="stat-change"><i class="fas fa-arrow-up"></i> Kỷ lục: 15 ngày</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="progress-charts">
+            <div class="chart-container">
+                <h3><i class="fas fa-chart-bar"></i> Tiến trình điểm số</h3>
+                <canvas id="scoreChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3><i class="fas fa-clock"></i> Thời gian học tập</h3>
+                <canvas id="timeChart"></canvas>
+            </div>
+        </section>
+
+        <section class="skill-breakdown">
+            <h3><i class="fas fa-puzzle-piece"></i> Phân tích kỹ năng</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Listening</h4>
+                    <div class="skill-progress">
+                        <div class="progress-fill" style="width: 75%"></div>
+                        <span>75%</span>
+                    </div>
+                    <p>Độ chính xác trung bình</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Reading</h4>
+                    <div class="skill-progress">
+                        <div class="progress-fill" style="width: 68%"></div>
+                        <span>68%</span>
+                    </div>
+                    <p>Độ chính xác trung bình</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Writing</h4>
+                    <div class="skill-progress">
+                        <div class="progress-fill" style="width: 62%"></div>
+                        <span>62%</span>
+                    </div>
+                    <p>Điểm trung bình</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Speaking</h4>
+                    <div class="skill-progress">
+                        <div class="progress-fill" style="width: 59%"></div>
+                        <span>59%</span>
+                    </div>
+                    <p>Điểm trung bình</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-activities">
+            <h3><i class="fas fa-history"></i> Hoạt động gần đây</h3>
+            <div class="activities-list">
+                <div class="activity">
+                    <div class="activity-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>TOEIC Listening Part 3</h4>
+                        <p class="activity-meta">Hoàn thành lúc 15:30 - 20/10/2023</p>
+                        <p class="activity-score">Điểm: 28/40 (70%) <span class="improvement">+5% so với lần trước</span></p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>IELTS Writing Task 2</h4>
+                        <p class="activity-meta">Hoàn thành lúc 09:15 - 19/10/2023</p>
+                        <p class="activity-score">Điểm: 6.0 <span class="improvement">+0.5 so với lần trước</span></p>
+                    </div>
+                </div>
+                <div class="activity">
+                    <div class="activity-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>TOEIC Reading Part 7</h4>
+                        <p class="activity-meta">Hoàn thành lúc 21:45 - 18/10/2023</p>
+                        <p class="activity-score">Điểm: 32/48 (67%) <span class="no-change">Không thay đổi</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Giống footer các trang khác -->
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="progress-script.js"></script>
+</body>
+</html>
