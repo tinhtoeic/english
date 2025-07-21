@@ -4,161 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOEIC Listening - Diệu Thanh English</title>
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="../../toeic/toeic-styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="toeic-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <div class="container">
-            <div class="logo-container">
-                <img src="../../images/dolphin-logo.png" alt="Diệu Thanh English Logo" class="logo-img">
-                <h1 class="logo-text">Diệu Thanh <span>English</span></h1>
+            <div class="logo">
+                <img src="../images/dolphin-logo.png" alt="Diệu Thanh English">
+                <span>Diệu Thanh English</span>
             </div>
-            <nav>
-                <a href="../../index.html"><i class="fas fa-home"></i> Trang chủ</a>
-                <a href="../listening.html" class="active"><i class="fas fa-headphones"></i> Listening</a>
-                <a href="../reading.html"><i class="fas fa-book-open"></i> Reading</a>
-                <a href="../../progress.html"><i class="fas fa-chart-line"></i> Tiến trình</a>
-                <a href="../../login.html" class="btn-login"><i class="fas fa-user"></i> Tài khoản</a>
+            <nav class="main-nav">
+                <a href="../index.html"><i class="fas fa-home"></i> Trang chủ</a>
+                <a href="listening.html" class="active"><i class="fas fa-headphones"></i> Listening</a>
+                <a href="reading.html"><i class="fas fa-book-open"></i> Reading</a>
+                <a href="../auth/login.html" class="btn-login"><i class="fas fa-user"></i> Tài khoản</a>
             </nav>
         </div>
     </header>
 
-    <main class="container toeic-container">
-        <section class="toeic-header">
-            <h2><i class="fas fa-headphones"></i> TOEIC Listening</h2>
-            <div class="level-selector">
-                <span>Trình độ:</span>
-                <select id="level">
-                    <option value="all">Tất cả</option>
-                    <option value="beginner">Beginner (250-400)</option>
-                    <option value="intermediate">Intermediate (400-600)</option>
-                    <option value="advanced">Advanced (600-900)</option>
-                </select>
-            </div>
-        </section>
+    <main class="toeic-main">
+        <div class="container">
+            <section class="toeic-header">
+                <h1><i class="fas fa-headphones"></i> TOEIC Listening</h1>
+                <div class="level-selector">
+                    <span>Trình độ:</span>
+                    <select id="level">
+                        <option value="all">Tất cả</option>
+                        <option value="beginner">Beginner (250-400)</option>
+                        <option value="intermediate">Intermediate (400-600)</option>
+                        <option value="advanced">Advanced (600-900)</option>
+                    </select>
+                </div>
+            </section>
 
-        <section class="practice-section">
-            <div class="part-selector">
-                <div class="part active" data-part="1">Part 1</div>
-                <div class="part" data-part="2">Part 2</div>
-                <div class="part" data-part="3">Part 3</div>
-                <div class="part" data-part="4">Part 4</div>
-            </div>
-
-            <div class="exercise-container">
-                <div class="audio-player">
-                    <audio controls id="listening-audio">
-                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                        Trình duyệt không hỗ trợ audio
-                    </audio>
-                    <div class="timer">00:00 / 00:00</div>
-                </div>
-
-                <div class="exercise-content">
-                    <h3>Bài tập Part 1: Mô tả hình ảnh</h3>
-                    <p>Nghe và chọn câu mô tả đúng nhất cho bức tranh sau:</p>
-                    
-                    <div class="image-question">
-                        <img src="https://via.placeholder.com/500x300?text=TOEIC+Part+1+Example" alt="TOEIC Part 1 Example">
-                    </div>
-                    
-                    <div class="options">
-                        <label class="option">
-                            <input type="radio" name="answer" value="A">
-                            <span class="option-letter">A</span>
-                            <span class="option-text">The man is signing a document.</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="answer" value="B">
-                            <span class="option-letter">B</span>
-                            <span class="option-text">The woman is standing near the window.</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="answer" value="C">
-                            <span class="option-letter">C</span>
-                            <span class="option-text">They are shaking hands.</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="answer" value="D">
-                            <span class="option-letter">D</span>
-                            <span class="option-text">The chairs are stacked on the table.</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="exercise-controls">
-                    <button class="btn btn-pink" id="submit-answer"><i class="fas fa-check-circle"></i> Nộp bài</button>
-                    <button class="btn btn-blue" id="next-question"><i class="fas fa-arrow-right"></i> Câu tiếp theo</button>
-                    <button class="btn btn-transparent" id="show-transcript"><i class="fas fa-align-left"></i> Xem transcript</button>
-                </div>
-
-                <div class="result-container hidden" id="result-container">
-                    <h4><i class="fas fa-check-circle"></i> Kết quả</h4>
-                    <p>Đáp án đúng: <strong>B. The woman is standing near the window.</strong></p>
-                    <p>Giải thích: Câu này mô tả đúng nhất nội dung bức tranh.</p>
-                </div>
-
-                <div class="transcript-container hidden" id="transcript-container">
-                    <h4><i class="fas fa-align-left"></i> Transcript</h4>
-                    <p>(A) The man is signing a document.</p>
-                    <p>(B) The woman is standing near the window.</p>
-                    <p>(C) They are shaking hands.</p>
-                    <p>(D) The chairs are stacked on the table.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="progress-tracker">
-            <h3><i class="fas fa-chart-bar"></i> Tiến trình của bạn</h3>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 65%"></div>
-                <span>65%</span>
-            </div>
-            <div class="progress-stats">
-                <div class="stat">
-                    <span class="stat-value">24</span>
-                    <span class="stat-label">Bài đã làm</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">78%</span>
-                    <span class="stat-label">Độ chính xác</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">3</span>
-                    <span class="stat-label">Ngày liên tiếp</span>
-                </div>
-            </div>
-        </section>
+            <section class="practice-section">
+                <!-- Nội dung bài tập -->
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../../images/dolphin-logo.png" alt="Diệu Thanh English Logo" width="60">
-                    <span>Diệu Thanh English</span>
-                </div>
-                <div class="footer-links">
-                    <h4>Liên hệ</h4>
-                    <p><i class="fas fa-envelope"></i> info@dieuthanhenglish.com</p>
-                    <p><i class="fas fa-phone"></i> 0123 456 789</p>
-                </div>
-                <div class="footer-social">
-                    <h4>Theo dõi chúng tôi</h4>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>© 2023 Diệu Thanh English. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../../script.js"></script>
-    <script src="../../toeic/toeic-script.js"></script>
+    <script src="../script.js"></script>
+    <script src="toeic-script.js"></script>
 </body>
 </html>
